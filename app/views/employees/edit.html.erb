@@ -1,0 +1,9 @@
+<h3> Edit Employee </h3>
+<br>
+<%= render 'form' %>
+<br>
+<%= link_to "Delete Employee", employee_path(@employee), method: :delete %>
+<br>
+<%= link_to "Go back to employee", employee_path(@employee) %>
+<br>
+<%= link_to "See all employees", employees_path %>

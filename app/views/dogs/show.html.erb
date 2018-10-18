@@ -1,0 +1,18 @@
+<h3> Lil Dawgy Dawg </h3>
+
+<p>Name: <%= @dog.name%></p>
+<p>Breed: <%= @dog.breed%></p>
+<p>Age: <%= @dog.age%></p>
+<p>Employees who look after me:</p>
+<% @dog.employees.map do |employee| %>
+    -
+  <%= link_to employee.first_name + " " + employee.last_name, employee_path(employee) %>
+  <br>
+<% end %>
+<hr>
+
+<%= link_to "Edit this pup's details", edit_dog_path %>
+<br>
+<%= link_to "Delete the dog", dog_path(@dog), method: :delete %>
+<br>
+<%= link_to "All DAWGS", dogs_path %>

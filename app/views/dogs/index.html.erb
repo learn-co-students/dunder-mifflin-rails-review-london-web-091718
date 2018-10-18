@@ -1,0 +1,8 @@
+<h3> All the DAWGS </h3>
+
+<% @dogs.each do |dog| %>
+  <%= link_to dog.name, dog_path(dog) %>
+  <br>
+<% end %>
+<hr>
+<%= link_to "Add Dog", new_dog_path %>
