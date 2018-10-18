@@ -1,0 +1,12 @@
+<h1><%=@employee.first_name + " " + @employee.last_name%> Info ....</h1>
+
+
+<ul>
+  <li><%= @employee.alias %></li>
+  <li><%= @employee.title %></li>
+  <li><%= @employee.office %></li>
+  <li><%= link_to @employee.dog_inst.name, dog_path(@employee.dog_inst.id) %></li>
+</ul>
+<hr>
+
+<%= link_to "edit", edit_employee_path %>
