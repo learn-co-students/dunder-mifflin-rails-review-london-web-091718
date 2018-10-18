@@ -14,7 +14,7 @@ end
 
 def create
   @dog = Dog.create(dog_params)
-  redirect_to dog_path
+  redirect_to dog_path(@dog)
 end
 
 def edit

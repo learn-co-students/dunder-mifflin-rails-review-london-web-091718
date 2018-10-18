@@ -15,7 +15,13 @@ class EmployeesController < ApplicationController
 
   def create
     @employee = Employee.create(employee_params)
-    redirect_to employee_path(@employee)
+    if @employee.valid?
+      redirect_to employee_path
+    else
+      flash[:errors] = @employee.errors.show_full_messages
+      redirect_to new_employee_path
+    end
+    #redirect_to employee_path(@employee)
   end
 
   def edit
@@ -26,7 +32,12 @@ class EmployeesController < ApplicationController
   def update
       @employee = Employee.find(params[:id])
     @employee.update(employee_params)
-    redirect_to employee_path(@employee)
+    if @employee.valid?
+      redirect_to employee_path
+    else
+      flash[:errors] = @employee.errors.show_full_messages
+      redirect_to edit_employee_path
+    end
   end
 
   def destroy
