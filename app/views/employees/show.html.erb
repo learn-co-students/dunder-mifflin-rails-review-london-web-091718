@@ -1,0 +1,16 @@
+<h1>Hello, my name is: <%= @employee.full_name %></h1>
+<img src="<%= @employee.img_url %>" alt="<%= @employee.full_name %>" width="200px">
+<ul>
+  <li>Alias: <%= @employee.alias %></li>
+  <li>Title: <%= @employee.title %></li>
+  <li>Office: <%= @employee.office %></li>
+</ul>
+
+<h3>I'm taking care of:</h3>
+  <%= link_to @employee.dog.name, dog_path(@employee.dog) %>
+
+<br>
+<br>
+<%= link_to "Edit Employee", edit_employee_path(@employee) %>
+<br>
+<%= link_to "<< All Employees", employees_path %>
