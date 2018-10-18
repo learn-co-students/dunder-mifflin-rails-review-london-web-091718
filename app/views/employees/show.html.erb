@@ -1,0 +1,23 @@
+<h3> Employee </h3>
+<% if @employee.img_url %>
+  <img src="<%=@employee.img_url%>" alt="">
+<% else %>
+  <img src="https://www.capitalfm.co.ke/lifestyle/files/2018/10/web-mr-bean-atkinson-bbc-uk.jpg" alt="">
+<% end %>
+<p>Name: <%= @employee.first_name%> <%= @employee.last_name %></p>
+<p>Alias: <%= @employee.alias%></p>
+<p>Title: <%= @employee.title%></p>
+<p>Office: <%= @employee.office%></p>
+
+<% if @employee.dog %>
+  <p>Assigned Dog: <%= link_to @employee.dog.name, dog_path(@employee.dog) %>
+<% else %>
+  <p> Dogs: No dogs assigned </p>
+<% end %>
+<br>
+<hr>
+<%= link_to "Edit this employee's details", edit_employee_path %>
+<br>
+<%= link_to "Delete this employee", employee_path(@employee), method: :delete %>
+<br>
+<%= link_to "All employees", employees_path %>
