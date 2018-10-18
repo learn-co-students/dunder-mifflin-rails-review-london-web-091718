@@ -1,0 +1,5 @@
+<%= render 'form' %>
+
+<%= form_tag @employee, method: "delete" do %>
+  <%= submit_tag "Delete #{@employee}" %>
+<% end %>
