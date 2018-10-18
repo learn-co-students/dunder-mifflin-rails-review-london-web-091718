@@ -1,0 +1,16 @@
+<h1><%= @employee.full_name %></h1>
+<hr>
+<%= link_to "Edit Employee", edit_employee_url %>
+<hr>
+<div class="container">
+  <img src="<%= @employee.img_url %>" width="200">
+</div>
+<ul>
+  <li>Alias: <%= @employee.alias.capitalize %></li>
+  <li>Title: <%= @employee.title %></li>
+  <li>Office: <%= @employee.office %></li>
+  <li>Dogs: <%= link_to @employee.dog.name, dog_url %></li>
+</ul>
+
+<hr>
+<%= link_to "Go Back", employees_url %>

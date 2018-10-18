@@ -1,0 +1,16 @@
+<h1><%= @dog.name %></h1>
+
+<ul>
+  <li>Breed:
+    <%= @dog.breed %></li>
+  <li>Age:
+    <%= @dog.age.capitalize %></li>
+  <li>Empoyee Responsible:
+    <ul>
+      <% @dog.employees.each do |employee| %>
+      <li><%= link_to employee.full_name, employee_url(employee) %></li>
+      <% end %>
+    </ul>
+  </li>
+  </ul>
+  <%= link_to "Go Back", dogs_url %>
