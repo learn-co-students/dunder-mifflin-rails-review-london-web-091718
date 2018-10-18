@@ -1,0 +1,13 @@
+<h3>This is the pupper:</h3>
+
+Name: <%= @dog.name %><br>
+Breed: <%= @dog.breed %><br>
+Age category: <%= @dog.age %><br>
+<% @dog.employees.each do |e| %>
+  <%= link_to e.first_name, employee_path(e) %>
+  <% end %>
+<hr>
+
+
+<%= link_to "Edit this cute boi", edit_dog_path(@dog) %><br>
+<%= link_to 'home', dogs_path %>

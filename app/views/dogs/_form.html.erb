@@ -1,0 +1,17 @@
+<%= form_for @dog do |f| %>
+<%= f.label 'Name' %><br>
+<%= f.text_field :name %><br>
+
+<%= f.label 'Age' %><br>
+<%= f.text_field :age %><br>
+
+<%= f.label 'Breed' %><br>
+<%= f.text_field :breed %><br>
+
+<%= f.collection_check_boxes :employee_ids, Employee.all, :id, :first_name %>
+
+
+<%= f.submit 'Submit doggo' %>
+<% end %>
+
+<%= link_to "Home", dogs_path %>
