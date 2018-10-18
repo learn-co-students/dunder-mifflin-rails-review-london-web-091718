@@ -1,0 +1,9 @@
+<h1>All Employees</h1>
+<hr>
+<%= link_to "View All Dogs", dogs_url %>
+<hr>
+<% @employees.each do |employee| %>
+<ul>
+  <li><%=link_to employee.full_name, employee_url(employee) %></li>
+</ul>
+<% end %>
