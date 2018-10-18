@@ -1,0 +1,7 @@
+<h1>Edit <%= @employee.full_name %></h1>
+
+<%= render "form" %>
+
+<%= form_tag employee_path, method: "delete" do %>
+  <%= submit_tag 'Delete Employee'  %>
+<% end %>
